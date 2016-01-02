@@ -22,11 +22,11 @@ public class IntegerCoordinates_tests {
 	}
 
 	@Test
-	public void testStringifyElement() {
+	public void testStringifyCoord() {
 		IntegerCoordinates integerCoordinates = new IntegerCoordinates();
 		
-		assertEquals(integerCoordinates.stringifyElement(new Integer(1)), "1");
-		assertEquals(integerCoordinates.stringifyElement(new Integer(12345678)), "12345678");
+		assertEquals(integerCoordinates.stringifyCoord(new Integer(1)), "1");
+		assertEquals(integerCoordinates.stringifyCoord(new Integer(12345678)), "12345678");
 		
 	}
 
