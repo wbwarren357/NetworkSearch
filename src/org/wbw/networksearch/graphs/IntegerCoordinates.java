@@ -4,7 +4,7 @@ import org.wbw.networksearch.abstractgraphs.AbstractCoordTransformer;
 
 public class IntegerCoordinates implements AbstractCoordTransformer<Integer> {
 
-	public IntegerCoordinates() {}
+	public void IntegerCoordinates() {}
 	
 	public Integer convertString(String s){
 		return Integer.decode(s.trim());

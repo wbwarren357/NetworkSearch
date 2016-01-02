@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.wbw.networksearch.abstractgraphs.AbstractCoordTransformer;
 import org.wbw.networksearch.abstractgraphs.AbstractStringifyVertex;
 
 public class ListStringifyVertex<E> extends AbstractStringifyVertex<E> {
 
 	private static final String VERTEX_LIST_SEPARATOR = ",";
+
+	private AbstractCoordTransformer<E> elemTransformer;
+
+	public void setElemTransformer(AbstractCoordTransformer<E> elemTransformer) {
+		this.elemTransformer = elemTransformer;
+	}
 	
 	public ListStringifyVertex() {
 	}
