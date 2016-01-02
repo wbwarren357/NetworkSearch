@@ -7,12 +7,10 @@ public class IntegerCoordinates implements AbstractCoordTransformer<Integer> {
 	public IntegerCoordinates() {}
 	
 	public Integer convertString(String s){
-		//TODO implement convertString
-		return null;
+		return Integer.decode(s.trim());
 	}
 	
 	public String stringifyElement(Integer e){
-		//TODO implement stringifyElement
-		return null;
+		return e.toString();
 	}
 }
