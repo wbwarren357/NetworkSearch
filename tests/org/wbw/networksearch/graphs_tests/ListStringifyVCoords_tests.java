@@ -47,9 +47,7 @@ public class ListStringifyVCoords_tests {
 		listOf5.add(new Integer(5));
 
 		assertEquals(listStringifyVcoords.decodeVcoords("1"), listOf1);
-		System.out.println(listStringifyVcoords.decodeVcoords("1"));
 		assertEquals(listStringifyVcoords.decodeVcoords("1,2,3,4,5"), listOf5);
-		System.out.println(listStringifyVcoords.decodeVcoords("1,2,3,4,5"));
 	}
 
 }

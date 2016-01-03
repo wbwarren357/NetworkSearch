@@ -11,8 +11,9 @@ public class ListStringifyVcoords<C> extends AbstractStringifyVcoords<C> {
 
 	private static final String VERTEX_LIST_SEPARATOR = ",";
 	private AbstractTransformVcoords<C> vCoordTransformer;
+	private IntegerVcoordinates doodah = new IntegerVcoordinates();
 
-	public void setVcoordTransformer(AbstractTransformVcoords<C> vCordTransformer) {
+	public void setVcoordTransformer(AbstractTransformVcoords<C> vCoordTransformer) {
 		this.vCoordTransformer = vCoordTransformer;
 	}
 	
@@ -33,10 +34,12 @@ public class ListStringifyVcoords<C> extends AbstractStringifyVcoords<C> {
 	
 	@Override
 	public List<C> decodeVcoords(String vNameArg) {
+		
 		List<C> listVcoords = new ArrayList<C>();		
 		List<String> listVcoordStrings = new ArrayList<String>(Arrays.asList(vNameArg.split(VERTEX_LIST_SEPARATOR)));
+
 		for (String vCoordString : listVcoordStrings) {
-			listVcoords.add(vCoordTransformer.convertVcoordString(vCoordString));
+			listVcoords.add((C) vCoordTransformer.convertVcoordString(vCoordString));
 		}
 		return listVcoords;
 	}
