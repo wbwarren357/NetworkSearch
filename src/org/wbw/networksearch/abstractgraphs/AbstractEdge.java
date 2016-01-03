@@ -1,19 +1,43 @@
 package org.wbw.networksearch.abstractgraphs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractEdge<V> {
 
-	public static final int DIRECTED = 0;
-	public static final int BIDIRECTIONAL = 1;
+	public enum EDGE_TYPE{ ONE_WAY, TWO_WAY}
+
+	protected EDGE_TYPE edgeType;
+	protected V start;
+	protected V end;
+	protected String name;
 	
-	private int direction;
 	
-	public abstract List<V> getVertices();
-	public int getDirection(){
-		return direction;
+	public List<V> getVertices() {
+		List<V> list = new ArrayList();
+		list.add(start);
+		list.add(end);
+		return list;
 	}
-	public abstract V getStart();
-	public abstract V getEnd();
-	public abstract V getOtherEnd(V vertex);
+	
+	public V getStart() {
+		return start;
+	}
+	
+	public V getEnd() {
+		return end;
+	}
+	
+	public V getOtherEnd(V vertex) {
+		if (vertex.equals(start)) {
+			return end;
+		} else {
+			return start;
+		}
+	}
+
+	public EDGE_TYPE getEdgeType(){
+		return edgeType;
+	}
+	
 }
