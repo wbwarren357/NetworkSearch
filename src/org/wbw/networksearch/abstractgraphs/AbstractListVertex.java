@@ -3,25 +3,25 @@ package org.wbw.networksearch.abstractgraphs;
 import java.util.List;
 
 abstract public class AbstractListVertex<C> extends AbstractVertex<C> {
-	public enum VERTEX_TYPE {IS_REAL, IS_VIRTUAL}
+	public enum VertexType {IS_REAL, IS_VIRTUAL}
 
-	protected String vertexName;
-	protected VERTEX_TYPE vertexType;
-	protected List<C> vertexCoordinates;
+	protected String vName;
+	protected VertexType vType;
+	protected List<C> vCoordinates;
 
-	public String getName() {
-		return vertexName;
+	public String getVname() {
+		return vName;
 	}
 	
-	public List<C> getCoordinates() {
-		return vertexCoordinates;
+	public List<C> getVcoordinates() {
+		return vCoordinates;
 	}
 	
-	public void setType(VERTEX_TYPE type) {
-		this.vertexType = type;
+	public void setVtype(VertexType vtype) {
+		this.vType = vType;
 	}
-	public VERTEX_TYPE getTypel() {
-		return vertexType;
+	public VertexType getVtypel() {
+		return vType;
 	}
 
 }

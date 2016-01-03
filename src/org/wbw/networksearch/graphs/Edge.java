@@ -1,13 +1,25 @@
 package org.wbw.networksearch.graphs;
 
 import org.wbw.networksearch.abstractgraphs.AbstractEdge;
+import org.wbw.networksearch.abstractgraphs.AbstractEdge.EdgeWay;
 
 public class Edge<V> extends AbstractEdge<V> {
 
-	public Edge(V startV, V endV, EDGE_TYPE edgeType) {
-		this.start = startV;
-		this.end = endV;
-		this.edgeType = edgeType;
-		this.name = "";
+//	protected EdgeWay eWay;
+//	protected V vStart;
+//	protected String vStartName;
+//	protected V vEnd;
+//	protected String vEndName;
+//	protected String eTail;
+//	protected String eName;	
+
+	public Edge(V vStart, String vStartName, V vEnd, String vEndName, EdgeWay eWay) {
+		this.vStart = vStart;
+		this.vStartName = vStartName;
+		this.vEnd = vEnd;
+		this.vEndName = vEndName;
+		this.eWay = eWay;
+		
+		this.eTail = vStartName + eWay + vEndName;
 	}
 }
