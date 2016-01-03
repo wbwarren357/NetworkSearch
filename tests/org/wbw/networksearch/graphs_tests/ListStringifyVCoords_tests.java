@@ -3,7 +3,6 @@ package org.wbw.networksearch.graphs_tests;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
 import org.junit.Test;
 import org.wbw.networksearch.abstractgraphs.AbstractTransformVcoords;
 import org.wbw.networksearch.graphs.IntegerVcoordinates;

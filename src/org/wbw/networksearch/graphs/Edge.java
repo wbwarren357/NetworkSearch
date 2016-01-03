@@ -1,7 +1,6 @@
 package org.wbw.networksearch.graphs;
 
 import org.wbw.networksearch.abstractgraphs.AbstractEdge;
-import org.wbw.networksearch.abstractgraphs.AbstractEdge.EdgeWay;
 
 public class Edge<V> extends AbstractEdge<V> {
 
@@ -20,6 +19,6 @@ public class Edge<V> extends AbstractEdge<V> {
 		this.vEndName = vEndName;
 		this.eWay = eWay;
 		
-		this.eTail = vStartName + eWay + vEndName;
+		this.eTail = vStartName + eWay.getWay() + vEndName;
 	}
 }

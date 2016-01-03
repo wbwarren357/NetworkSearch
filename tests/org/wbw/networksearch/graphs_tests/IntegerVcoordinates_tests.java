@@ -2,7 +2,6 @@ package org.wbw.networksearch.graphs_tests;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.wbw.networksearch.graphs.IntegerVcoordinates;
 

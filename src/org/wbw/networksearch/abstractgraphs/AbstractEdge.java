@@ -11,6 +11,11 @@ public abstract class AbstractEdge<V> {
 		EdgeWay(String way) {
 			this.way = way;
 		}
+		
+		public String getWay() {
+			return way;
+		}
+		
 	}
 
 	protected EdgeWay eWay;
@@ -23,7 +28,7 @@ public abstract class AbstractEdge<V> {
 	
 	
 	public List<V> getVertices() {
-		List<V> vlist = new ArrayList();
+		List<V> vlist = new ArrayList<V>();
 		vlist.add(vStart);
 		vlist.add(vEnd);
 		return vlist;
