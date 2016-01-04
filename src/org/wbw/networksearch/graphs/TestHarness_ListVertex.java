@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.wbw.networksearch.abstractgraphs.AbstractTransformVcoords;
 import org.wbw.networksearch.abstractgraphs.AbstractListVertex.VertexType;
 
-public class TestHarness {
+public class TestHarness_ListVertex {
 
 	public static void main(String[] args) {
 		IntegerVcoordinates integerVcoordinates = new IntegerVcoordinates();

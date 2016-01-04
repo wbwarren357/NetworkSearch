@@ -26,6 +26,13 @@ public abstract class AbstractEdge<V> {
 	protected String eTail;
 	protected String eName;
 	
+	public String getEname() {
+		return eName;
+	}
+	
+	public String getEtail() {
+		return eTail;
+	}
 	
 	public List<V> getVertices() {
 		List<V> vlist = new ArrayList<V>();
@@ -58,8 +65,12 @@ public abstract class AbstractEdge<V> {
 		}
 	}
 	
-	public EdgeWay getEway() {
+	public EdgeWay getWay() {
 		return this.eWay;
+	}
+	
+	public String getWayString() {
+		return this.eWay.getWay();
 	}
 	
 	public Boolean hasEdge(StringBuilder path) {

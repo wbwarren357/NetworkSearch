@@ -58,7 +58,6 @@ public class ListVertex_Tests {
 		assertEquals(lv.getVcoordinates(), listOf2);
 		assertEquals(lv.getVtypel(), VertexType.IS_REAL);
 
-		System.out.println("Test 4");
 		lv = new ListVertex<Integer>(VertexType.IS_VIRTUAL, "1,2,3,4,5");
 		assertEquals(lv.getVname(), "1,2,3,4,5");
 		assertEquals(lv.getVcoordinates(), listOf5);
