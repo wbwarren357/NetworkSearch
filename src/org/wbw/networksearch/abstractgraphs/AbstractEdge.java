@@ -73,7 +73,7 @@ public abstract class AbstractEdge<V> {
 		return this.eWay.getWay();
 	}
 	
-	public Boolean hasEdge(StringBuilder path) {
+	public Boolean isInPath(StringBuilder path) {
 		if (path.indexOf(eName) > -1) {
 			return true;
 		} else {
@@ -81,7 +81,7 @@ public abstract class AbstractEdge<V> {
 		}
 	}
 	
-	public Boolean hasEndVertex(StringBuilder path) {
+	public Boolean hasEndVertexInPath(StringBuilder path) {
 		if (path.indexOf(vEndName) > -1) {
 			return true;
 		} else {
@@ -89,8 +89,29 @@ public abstract class AbstractEdge<V> {
 		}
 	}
 	
+	
 	public StringBuilder addEdgeToPathEnd(StringBuilder path) {
 		return path.append(eTail);
 	}
 	
+	public Boolean isEquivalent(AbstractEdge<V> eCheck) {
+		if (this.vStart.equals(eCheck.getVstart()) 
+				&& this.vEnd.equals(eCheck.getVend())
+				&& this.eWay == eCheck.getWay()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Boolean hasSameVertices(AbstractEdge<V> eCheck) {
+		if (this.vStart.equals(eCheck.getVstart()) && this.vEnd.equals(eCheck.getVend())) {
+			return true;
+		} else if (this.vStart.equals(eCheck.getVend()) && this.vEnd.equals(eCheck.getVstart())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

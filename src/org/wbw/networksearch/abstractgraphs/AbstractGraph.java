@@ -22,8 +22,8 @@ public abstract class AbstractGraph<V,E> {
 	public abstract Boolean addEdge(E edge);
 	public abstract Boolean removeEdge(E edge);
 	
-	public abstract int numVertices();
-	public abstract int numEdges();
+	public abstract int getNumVertices();
+	public abstract int getNumEdges();
 	
 	public abstract Boolean hasVertex(V vertex);
 	public abstract Boolean hasEdge(E edge);

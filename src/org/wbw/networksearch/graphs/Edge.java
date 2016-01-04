@@ -14,4 +14,30 @@ public class Edge<V> extends AbstractEdge<V> {
 		this.eName = vStartName + eWay.getWay() + vEndName;
 		this.eTail = eWay.getWay() + vEndName;
 	}
+	
+	public Edge<V> combineEdges(Edge<V> eCheck) {
+		if (this.hasSameVertices(eCheck)) {
+			if (this.eWay == EdgeWay.BOTH || eCheck.getWay() == EdgeWay.BOTH ) {
+				//return new edge with same vertices and EdgeWay.BOTH
+				return new Edge<V>(
+						this.vStart,
+						this.vStartName,
+						this.vEnd,
+						this.vEndName,
+						EdgeWay.BOTH 
+						);
+			} else {
+				// return new edge same as this
+				return new Edge<V>(
+						this.vStart,
+						this.vStartName,
+						this.vEnd,
+						this.vEndName,
+						this.eWay 
+						);
+			}
+		} else {
+			return null;
+		}
+	}
 }

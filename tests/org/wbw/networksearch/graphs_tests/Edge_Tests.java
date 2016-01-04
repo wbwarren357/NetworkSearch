@@ -103,8 +103,8 @@ public class Edge_Tests {
 		path.append(lv1.getVname());
 
 		assertTrue(edge2.addEdgeToPathEnd(path).toString().equals(lv1.getVname() + edge2.getWayString() + lv2.getVname()));
-		assertTrue(edge2.hasEdge(path));
-		assertTrue(edge1.hasEndVertex(path));
+		assertTrue(edge2.isInPath(path));
+		assertTrue(edge1.hasEndVertexInPath(path));
 	}
 
 }
