@@ -1,4 +1,4 @@
-package org.wbw.networksearch.graphs;
+package org.wbw.networksearch.graphs.test_harnesses;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,7 +8,11 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import org.wbw.networksearch.graphs.*;
+import org.wbw.networksearch.abstractgraphs.*;
 import org.wbw.networksearch.abstractgraphs.AbstractTransformVcoords;
+import org.wbw.networksearch.graphs.ListStringifyVcoords;
 import org.wbw.networksearch.abstractgraphs.AbstractEdge.EdgeWay;
 import org.wbw.networksearch.abstractgraphs.AbstractListVertex.VertexType;
 
