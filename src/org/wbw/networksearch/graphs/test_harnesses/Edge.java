@@ -1,4 +1,4 @@
-package org.wbw.networksearch.graphs;
+package org.wbw.networksearch.graphs.test_harnesses;
 
 import org.wbw.networksearch.abstractgraphs.AbstractEdge;
 
