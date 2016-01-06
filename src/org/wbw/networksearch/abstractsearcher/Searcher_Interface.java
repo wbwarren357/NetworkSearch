@@ -1,16 +1,23 @@
 package org.wbw.networksearch.abstractsearcher;
 
+
+import java.util.List;
+
 import org.wbw.networksearch.abstractgraphs.Graph_Interface;
+
 public interface Searcher_Interface {
 
-	public enum WorkQueueType { FIFO, LIFO };
-	public enum PathType { NO_VERTEX_REUSE, NO_EDGE_REUSE };
-	
 	// Configure
-	public void setWorkQueueType(WorkQueueType workQueueType);
-	public void setPathType(PathType path_type);
+	setWorkQueue(WorkQueue_Interface workQueue);
+	setStringStorageProvider(StringStorageProvider_Interface stringStorageProvider);
+	setDataCollector(DataCollector_Interface dataCollector);
 	
 	// Do search and get results
-	public Boolean doSearch(Graph_Interface graph);
-	public void reportResults();
+	public Boolean doSearch(
+			Graph_Interface graph,
+			List<Integer> startVcoords,
+			List<Integer> endVcoords,
+			PathType pathType
+			);
+
 }

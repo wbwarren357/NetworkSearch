@@ -1,14 +1,14 @@
 package org.wbw.networksearch.abstractsearcher;
 
 import org.wbw.networksearch.abstractgraphs.Graph_Interface;
-import org.wbw.networksearch.abstractsearcher.Searcher_Interface.PathType;
-import org.wbw.networksearch.abstractsearcher.Searcher_Interface.WorkQueueType;
+import org.wbw.networksearch.abstractgraphs.PathExtender_Interface;
 
 
 public interface SearcherFactory_Interface {
 
-	public InterfaceSearcher getSearcher( 
-			Graph_Interface graph,
-			PathType pathType,
-			WorkQueueType workQueueType);
+	public Searcher_Interface getSearcher( 
+			WorkQueue_Interface workQueue,
+			StringStorageProvider_Interface stringStorageProvider,
+			DataCollector_Interface dataCollector
+		);
 }
