@@ -1,7 +1,7 @@
 package org.wbw.networksearch.simplesearcher;
 
-import org.networksearch.abstractsearcher.InterfaceSearcher;
+import org.wbw.networksearch.abstractsearcher.Searcher_Interface;
 
-public class SimpleSearcher implements InterfaceSearcher {
+public class SimpleSearcher implements Searcher_Interface {
 
 }
