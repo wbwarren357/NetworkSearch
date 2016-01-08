@@ -7,7 +7,7 @@ import org.wbw.networksearch.abstractsearcherutils.Path_Interface.*;
 
 public class SimplePathFactory implements PathFactory_Interface {
 
-	// Need to add a DataCollector_Interface argument
+	// Need to use the DataCollector_Interface argument
 	
 	private QueueStrategy queueStrategy = QueueStrategy.LIFO;
 	private PathType pathType = PathType.NO_EDGE_REUSE;
