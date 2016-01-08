@@ -2,6 +2,7 @@ package org.wbw.networksearch.simplesearcherutils;
 
 import org.wbw.networksearch.abstractsearcherutils.PathQueue_Interface;
 import org.wbw.networksearch.abstractsearcherutils.Path_Interface;
+import org.wbw.networksearch.abstractsearcherutils.DataCollector_Interface;
 
 public class SimplePath implements Path_Interface {
 
@@ -14,6 +15,8 @@ public class SimplePath implements Path_Interface {
 
 	private SimplePathQueue pathQueue;
 	private SimplePathQueue freedPaths;
+	
+	DataCollector_Interface dataCollector;
 
 	
 	// Constructor
@@ -22,7 +25,7 @@ public class SimplePath implements Path_Interface {
 		this.freedPaths = freedPaths;
 	}
 	
-	protected SimplePath initPath(PathType pathType) {
+	protected SimplePath initPath(PathType pathType, DataCollector_Interface dataCollector) {
 		
 		// Populate with initial values
 		this.pathType = pathType;

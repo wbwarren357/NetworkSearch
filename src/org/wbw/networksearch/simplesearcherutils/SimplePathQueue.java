@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import org.wbw.networksearch.abstractsearcherutils.PathQueue_Interface;
 import org.wbw.networksearch.abstractsearcherutils.Path_Interface;
+import org.wbw.networksearch.abstractsearcherutils.DataCollector_Interface;
 
 
 public class SimplePathQueue implements PathQueue_Interface {
@@ -14,11 +15,13 @@ public class SimplePathQueue implements PathQueue_Interface {
 	
 	// queue strategy for this instance
 	QueueStrategy queueStrategy;
+	DataCollector_Interface dataCollector;
 	
 	
 	//Constructor
-	protected SimplePathQueue(QueueStrategy queueStrategy) {
+	protected SimplePathQueue(QueueStrategy queueStrategy, DataCollector_Interface dataCollector) {
 		this.queueStrategy = queueStrategy;
+		this.dataCollector = dataCollector;
 	}
 	
 	@Override
