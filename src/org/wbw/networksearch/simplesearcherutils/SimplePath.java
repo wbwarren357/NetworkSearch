@@ -5,6 +5,7 @@ import org.wbw.networksearch.abstractsearcherutils.Path_Interface;
 
 public class SimplePath implements Path_Interface {
 
+	private PathType pathType = PathType.NO_EDGE_REUSE;
 	private StringBuilder sb = null;
 	private String endVname;
 	private String lastEname;
@@ -21,9 +22,10 @@ public class SimplePath implements Path_Interface {
 		this.freedPaths = freedPaths;
 	}
 	
-	protected SimplePath initPath() {
+	protected SimplePath initPath(PathType pathType) {
 		
 		// Populate with initial values
+		this.pathType = pathType;
 		if(this.sb == null) {
 			this.sb = new StringBuilder();
 		} else {
