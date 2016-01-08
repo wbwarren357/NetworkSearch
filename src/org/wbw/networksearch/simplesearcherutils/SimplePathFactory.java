@@ -6,23 +6,19 @@ import org.wbw.networksearch.abstractsearcherutils.Path_Interface.*;
 
 public class SimplePathFactory implements PathFactory_Interface {
 
-	private static QueueStrategy queueStrategy = QueueStrategy.LIFO;
-	private static PathType pathType = PathType.NO_EDGE_REUSE;
+	private QueueStrategy queueStrategy = QueueStrategy.LIFO;
+	private PathType pathType = PathType.NO_EDGE_REUSE;
 	
-	private static SimplePathQueue pathQueue = null;
-	private static SimplePathQueue freedPaths = null;
+	private SimplePathQueue pathQueue = null;
+	private SimplePathQueue freedPaths = null;
 	
 	public SimplePathFactory(
 			QueueStrategy queueStrategy,
 			PathType pathType
 			) {
-		if(pathQueue == null) {
-			pathQueue = new SimplePathQueue(queueStrategy);
-		}
-		if(freedPaths == null) {
-			freedPaths = new SimplePathQueue(queueStrategy);
-		}
 		
+		pathQueue = new SimplePathQueue(queueStrategy);
+		freedPaths = new SimplePathQueue(queueStrategy);
 		this.queueStrategy = queueStrategy;
 		this.pathType = pathType;
 	}
