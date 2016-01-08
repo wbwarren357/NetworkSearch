@@ -5,7 +5,7 @@ import org.wbw.networksearch.abstractsearcherutils.Path_Interface;
 
 public class SimplePath implements Path_Interface {
 
-	private StringBuilder sb;
+	private StringBuilder sb = null;
 	private String endVname;
 	private String lastEname;
 	private int plength;
@@ -16,43 +16,35 @@ public class SimplePath implements Path_Interface {
 
 	
 	// Constructor
-	private SimplePath() {}
-	
-	@Override
-	public Path_Interface getNewPath(PathQueue_Interface pathQueue, PathQueue_Interface freedPaths) {
-		SimplePath path;
-		
-		// If there are freed paths, get one
-		if (freedPaths.getQueueLength() > 0) {
-			// get a freedPath
-			path = (SimplePath) freedPaths.getNextPathLIFO();
-		} else {
-			// Else, create a new one
-			path = new SimplePath();
-		}
-		
-		// Populate with initial values
-		path.clearSB();
-		path.setEndVname("");
-		path.setLastEname("");
-		path.setPlength(0);
-		path.setPathFreed(true);
-		path.setPathQueue((SimplePathQueue) pathQueue);
-		path.setFreedPaths((SimplePathQueue) freedPaths);
-
-		return path;
+	protected SimplePath(SimplePathQueue pathQueue, SimplePathQueue freedPaths) {
+		this.pathQueue = pathQueue;
+		this.freedPaths = freedPaths;
 	}
 	
-	private void clearSB() { this.sb = sb.delete(0,  sb.length()); }
-	private void setEndVname(String endVname) { this.endVname = endVname; }
-	private void setLastEname(String lastEname) { this.lastEname = lastEname; }
-	private void setPlength(int pLength) { this.plength = pLength; }
-	private void setPathFreed(Boolean pathFrred) { this.pathFreed = pathFreed; }
-	private void setPathQueue(SimplePathQueue pathQueue) {this.pathQueue = pathQueue; }
-	private void setFreedPaths(SimplePathQueue freedPaths) {this.freedPaths = freedPaths; }
+	protected SimplePath initPath() {
+		
+		// Populate with initial values
+		if(this.sb == null) {
+			this.sb = new StringBuilder();
+		} else {
+			this.sb = sb.delete(0,  sb.length());
+		}
+		this.endVname = ""; 
+		this.lastEname = ""; 
+		this.plength = 0;
+		this.pathFreed = false; 
+	
+		return this;
+	}
 	
 	@Override
-	public Boolean createExtendedAndQueue(PathType pathType, String vName, String eName, String eTail) {
+	public Boolean createExtendedAndQueue(String vName, String eName, String eTail) {
+		Boolean extendedPathValid = true;
+		
+		// if NoVertexReuse, test for Vertex
+		if(true) {
+			
+		}
 		return true;
 	}
 
