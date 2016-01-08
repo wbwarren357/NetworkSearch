@@ -1,21 +1,15 @@
 package org.wbw.networksearch.abstractsearcherutils;
 
 public interface Path_Interface {
-
-
-//	StringBuilder sb;
-//	String endVname;
-//	String lastEname;
-//	int plength;
-	// Booean pathFreed;
-
-
-
-	public Path_Interface addToNew(String vName, String eName);
-	public String getLastEndEname();
-	public String getLastVertexVname();
+	enum SearchType{BREAD_FIRST, DEPTH_FIRST}
+	enum QueueStrategy{FIFO, LIFO}
+	enum PathType{ NO_VERTEX_REUSE, NO_EDGE_REUSE }
+	
+	public Path_Interface getNewPath(PathQueue_Interface pathQueue, PathQueue_Interface freedPaths);
+	public Boolean createExtendedAndQueue(PathType pathType, String vName, String eName, String eTail);
+	public String getEndEname();
+	public String getEndVname();
 	public String getPathString();
 	public int getPathLength();
 	public void freePath();
-	
 }

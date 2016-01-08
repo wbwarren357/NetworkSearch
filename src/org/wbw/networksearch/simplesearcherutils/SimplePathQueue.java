@@ -1,4 +1,4 @@
-package org.wbw.networksearch.searcherutils;
+package org.wbw.networksearch.simplesearcherutils;
 
 import org.wbw.networksearch.abstractsearcherutils.PathQueue_Interface;
 import org.wbw.networksearch.abstractsearcherutils.Path_Interface;

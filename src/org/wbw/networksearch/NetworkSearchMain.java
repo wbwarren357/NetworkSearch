@@ -6,8 +6,8 @@ import org.wbw.networksearch.abstractgraphs.GraphFactory_Interface;
 import org.wbw.networksearch.abstractgraphs.Graph_Interface;
 import org.wbw.networksearch.abstractsearcher.Searcher_Interface;
 import org.wbw.networksearch.abstractsearcherutils.DataCollector_Interface;
-import org.wbw.networksearch.searcherutils.SimpleDataCollector;
-import org.wbw.networksearch.searcherutils.SimplePathQueue;
+import org.wbw.networksearch.abstractsearcherutils.Path_Interface;
+import org.wbw.networksearch.abstractsearcherutils.PathQueue_Interface;
 import org.wbw.networksearch.abstractsearcher.SearcherFactory_Interface;
 
 public class NetworkSearchMain {
@@ -19,7 +19,8 @@ public class NetworkSearchMain {
 		// Dimensions of the graph
 		// Start and end points in the graph
 		// Collect extended data yes/no
-		Searcher_Interface.SearchType searchType = SearchType.BREADTH_FIRST;
+		PathInterface.SearchType searchType = SearchType.BREADTH_FIRST;
+		PathInterface.QueueStrategy queueStrategy.LIFO;
 		Integer[] graphDimensions = {2,2};
 		Integer[] startCoords = {0,0};
 		DataCollector_Interface.DataCollectorOnOff collectData = DataCollector_Interface.DataCollectorOnOff.OFF;
